@@ -1,8 +1,8 @@
 {
     "git_remote": "",
-    "github_create_repo": "false",
-    "github_org": "{{ cookiecutter.github_username }}",
+    "github_create_repo": "true",
     "github_username": "identifiant-github",
+    "github_org": "{{ cookiecutter.github_username }}",
     "project_name": "Nom du projet",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "rocketchat_hook_url": "https://discutons.incongru.org/hooks/wd9Tfwof78pqb6i94/KagGAhiBA6KyWnSXFqJRXCbgqLp599G35gvPWnBPSTt7pMsc",
