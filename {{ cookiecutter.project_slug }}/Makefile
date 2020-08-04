@@ -2,8 +2,8 @@ help: ## Affiche ce message d'aide
 	@for MKFILE in $(MAKEFILE_LIST); do \
 		grep -E '^[a-zA-Z0-9\._-]+:.*?## .*$$' $$MKFILE | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'; \
 	done
-	@echo http://php.skel.localhost 
-	@echo http://adminer.skel.localhost 
+	@echo http://php.{{ cookiecutter.project_slug }}.localhost 
+	@echo http://adminer.{{ cookiecutter.project_slug }}.localhost 
 	
 start: ## demarrer
 	docker-compose up --build -d
