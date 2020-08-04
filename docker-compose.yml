@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+    mysql: 
+        image: mysql:5.7.31 
+        environment: 
+            MYSQL_ROOT_PASSWORD: aav
+            MYSQL_DATABASE: default
+        volumes: 
+            - ./src/bdd.sql:/docker-entrypoint-initdb.d/bdd.sql    
+
+    adminer:
+        image: adminer:latest  
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.adminer.entrypoints=web"
+            - "traefik.http.routers.adminer.rule=Host(`adminer.skel.localhost`)"  
+        
+    php:
+        build: .
+        image: kobische/skel
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.php.entrypoints=web"
+            - "traefik.http.routers.php.rule=Host(`php.skel.localhost`)"
+
+    traefik:
+        command:
+            - "--api.insecure=true"
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
+            - "--entrypoints.web.address=:80"
+        image: traefik:v2.2.8
+        ports:
+            - "80:80"
+            - "8080:8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro 
