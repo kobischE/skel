@@ -2,9 +2,8 @@ help: ## Affiche ce message d'aide
 	@for MKFILE in $(MAKEFILE_LIST); do \
 		grep -E '^[a-zA-Z0-9\._-]+:.*?## .*$$' $$MKFILE | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'; \
 	done
-	@echo http://php.{{ cookiecutter.project_slug }}.localhost 
-	@echo http://adminer.{{ cookiecutter.project_slug }}.localhost 
-	
+	@$(MAKE) urls
+
 start: ## demarrer
 	docker-compose up --build -d
 
@@ -22,4 +21,9 @@ portainer-open: portainer ## ouvrir portainer dans le navigateur
 	browse http://localhost:9000/#/home
 
 portainer-rm: ## supprimer portainer
-	docker rm -f portainer 
+	docker rm -f portainer
+
+urls: ## Affichage des URL publiques du projet
+	@echo "URL publiques:"
+	@echo "  Adminer : http://adminer.{{ cookiecutter.project_slug }}.localhost"
+	@echo "  Page d'accueil : http://php.{{ cookiecutter.project_slug }}.localhost"
