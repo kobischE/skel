@@ -109,7 +109,7 @@ On ajoute le label ici à php et adminer :
 
 
 
-# Création d'un template à partir de skel
+# Création d'un template à partir de skel : https://cookiecutter.readthedocs.io/en/1.7.2/installation.html 
 
 ## Création d'un fichier 
 ```
