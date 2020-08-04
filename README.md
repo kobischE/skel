@@ -19,3 +19,11 @@
 ```sh
 cookiecutter https://github.com/kobischE/skel.git
 ```
+
+## Développement
+
+### Tester le squelette localement
+
+```sh
+make test
+```
