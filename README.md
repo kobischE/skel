@@ -17,6 +17,5 @@
 ## Utilisation
 
 ```sh
-cookiecutter https://github.com/kobischE/skel.git github_create_repo=<true|false>
+cookiecutter https://github.com/kobischE/skel.git
 ```
-

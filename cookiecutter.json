@@ -1,6 +1,6 @@
 {
-    "git_remote": "",
-    "github_create_repo": "true",
+    "git_remote": "git@github.com:kobischE/skel.git",
+    "github_create_repo": "false",
     "github_username": "identifiant-github",
     "github_org": "{{ cookiecutter.github_username }}",
     "project_name": "Nom du projet",
