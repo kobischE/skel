@@ -1,9 +1,9 @@
 {
-    "git_remote": "git@github.com:kobischE/skel.git",
     "github_create_repo": ["false", "true"],
     "github_owner": "",
-    "project_name": "Nom du projet",
+    "git_remote_skel": "git@github.com:{{ cookiecutter.github_owner }}/skel.git",
+    "docker_repository": "docker.io/{{ cookiecutter.github_owner }}",
+    "project_name": "Un projet sacrément prometteur",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('\\'', '-') }}",
     "rocketchat_hook_url": "https://discutons.incongru.org/hooks/wd9Tfwof78pqb6i94/KagGAhiBA6KyWnSXFqJRXCbgqLp599G35gvPWnBPSTt7pMsc",
-    "skel_url": "{{ cookiecutter.git_remote.replace(':', '/').replace('git@', 'https://') }}"
 }

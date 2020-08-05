@@ -1,5 +1,14 @@
 version: '3'
+
 services:
+
+    apache:
+        build: .
+        image: "{{ cookiecutter.project_slug }}"
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.php.entrypoints=web"
+            - "traefik.http.routers.php.rule=Host(`{{ cookiecutter.project_slug }}.localhost`)"
 
     adminer:
         image: adminer:latest
@@ -8,23 +17,16 @@ services:
             - "traefik.http.routers.adminer.entrypoints=web"
             - "traefik.http.routers.adminer.rule=Host(`adminer.{{ cookiecutter.project_slug }}.localhost`)"
 
-    mysql:
-        image: mysql:latest
+    db:
+        image: mariadb:latest
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: {{ cookiecutter.project_slug }}
         volumes:
             - ./src/bdd.sql:/docker-entrypoint-initdb.d/bdd.sql
 
-    php:
-        build: .
-        image: "{{ cookiecutter.project_slug }}"
-        labels:
-            - "traefik.enable=true"
-            - "traefik.http.routers.php.entrypoints=web"
-            - "traefik.http.routers.php.rule=Host(`{{ cookiecutter.project_slug }}.localhost`)"
-    traefik:
-        image: portainer/portainer:latest
+    portainer:
+        image: portainer/portainer:1.24.1-alpine
         labels:
             - "traefik.enable=true"
             - "traefik.http.routers.portainer.entrypoints=web"

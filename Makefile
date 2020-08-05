@@ -15,6 +15,6 @@ test: ## Création d'un projet à partir des sources locales du squelette
 	cookiecutter \
 		--output-dir ./tests \
 		. \
-		git_remote=$$(git config --get remote.origin.url) \
+		git_remote_skel=$$(git config --get remote.origin.url) \
 		github_owner=$(GITHUB_OWNER) \
 		project_name=$(PROJECT_SLUG)
