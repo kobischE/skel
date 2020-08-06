@@ -30,6 +30,12 @@ Les logiciels suivant doivent être installés sur la machine hôte :
 
 ## Utilisation
 
+### Création d'un nouveau projet à partir de skel
+
+```sh
+cookiecutter https://github.com/kobischE/skel.git
+```
+
 ## Développement
 
 ### Commandes 
