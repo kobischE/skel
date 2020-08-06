@@ -1,4 +1,4 @@
-
+# Rappel du démarrage et de la mise en place de SKEL 
 
 # Docker-compose
 
@@ -111,27 +111,4 @@ On ajoute le label ici à php et adminer :
 
 # Création d'un template à partir de skel : https://cookiecutter.readthedocs.io/en/1.7.2/installation.html 
 
-## Création d'un fichier 
-```
-{{ cookiecutter.project_slug }} 
-```
-Mettre tout le projet dedans 
-
-
-## Création d'un fichier 
-```
-cookiecutter.json 
-
-{
-    "project_slug": "Hello"
-   
-}
-```
-## Création d'un dossier et Se placer dedans et créer le template: 
-
-```
-cookiecutter ../skel/
-```
-## Définir le nom du projet : 
-
-et c'est parti !! 
+voir dans le fichier README pour les détails. 
