@@ -34,16 +34,19 @@ Les logiciels suivant doivent être installés sur la machine hôte :
 
 ## Commandes
 
-### Démarrage
-```
+###  Démarrage
+
+```sh
 make start
 ```
 ### Arrêt
-```
+
+```sh
 make stop
 ```
-### info et urls 
-```
+### Info et urls 
+
+```sh
 make help
 ```
 
