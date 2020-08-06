@@ -31,8 +31,57 @@ Les logiciels suivant doivent être installés sur la machine hôte :
 - [`portainer`](https://www.portainer.io) : Interface graphique de gestion du serveur Docker
 - [`traefik`](https://www.traefik.io) : Routeur HTTP et TCP. Point d'entrée vers les différents services de l'applications
 
+## Utilisation
 
-## Commandes
+### Création d'un nouveau projet à partir du squelette
+
+```sh
+cookiecutter https://github.com/kobischE/skel.git
+```
+
+#### Paramètres
+
+- **`docker_repository`**
+
+    - Chemin vers un dépôt d'images Docker
+    - par défaut : `docker.io/{{ github_owner }}`
+
+- **`git_remote_skel`**
+
+    - URL du dépot Git hébergeant les sources du squelette
+    - par défaut : `git@github.com:{{ github_owner }}/skel.git`
+
+- **`github_create_repo`**
+
+    - Si `true` un dépôt distant est créé sur Github et les sources initiales du projet y sont ajoutées
+    - par défaut : `false`
+
+- **`github_owner`**
+
+    - Identifiant d'un utilisateur ou d'une organisation Github
+
+- **`project_name`**
+
+    - Le nom complet du projet
+    - par défaut : `Un projet sacrément prometteur`
+
+- **`project_slug`**
+
+    - L'identifiant textuel du projet
+    - par défaut : `{{ project_name.lower().replace(' ', '-').replace('\\'', '-') }}`
+
+- **`rocketchat_hook_url`**
+
+    - URL vers un [webhook Rocket Chat entrant](https://docs.rocket.chat/guides/administrator-guides/integrations)
+    - par défaut : `https://discutons.incongru.org/hooks/wd9Tfwof78pqb6i94/KagGAhiBA6KyWnSXFqJRXCbgqLp599G35gvPWnBPSTt7pMsc
+
+## Développement
+
+### Exécution de la suite de tests
+
+```sh
+make test
+```
 
 ###  Démarrage
 
